@@ -1,5 +1,7 @@
 # MetaLamp 2 task - Hotel website layout and UI Kit
 
+[**Ссылка на стартовую страницу проекта**](https://fullstack-development.github.io/frontend-intership-toxin/start-page.html)
+
 Второе задание - практика верстки [макета](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=0%3A1) сайта по поиску номеров отеля из Figma.
 
 ## Особенности проекта
@@ -15,22 +17,28 @@
 - Также некоторые элементы дизайна выполнены иконочными шрифтами [Material Icons](https://google.github.io/material-design-icons/) и [Font Awesome 5](https://fontawesome.com)
 - Для контроля максимального соответствия [макету](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=0%3A1) использовалось браузерное расширение PerfectPixel
 
-В проекте выполнен [**_Ui Kit_**](https://yarlykov.github.io/hotel_toxin/start-page.html) (единый макет дизайна), который состоит из четырех отдельных страниц:
+В проекте выполнен [**_Ui Kit_**](https://fullstack-development.github.io/frontend-intership-toxin/start-page.html) (единый макет дизайна), который состоит из четырех отдельных страниц:
 
-- [**Colors & Types**](https://yarlykov.github.io/hotel_toxin/ui-kit-colors-type.html)
-- [**Headers & Footers**](https://yarlykov.github.io/hotel_toxin/ui-kit-headers-footers.html)
-- [**Form & Elements**](https://yarlykov.github.io/hotel_toxin/ui-kit-form-elements.html)
-- [**Cards**](https://yarlykov.github.io/hotel_toxin/ui-kit-cards.html)
+- [**Colors & Types**](https://fullstack-development.github.io/frontend-intership-toxin/ui-kit-colors-type.html)
+- [**Headers & Footers**](https://fullstack-development.github.io/frontend-intership-toxin/ui-kit-headers-footers.html)
+- [**Form & Elements**](https://fullstack-development.github.io/frontend-intership-toxin/ui-kit-form-elements.html)
+- [**Cards**](https://fullstack-development.github.io/frontend-intership-toxin/ui-kit-cards.html)
 
 А также макет сайта, который включает в себя 5 страниц:
 
-- [**Landing**](https://yarlykov.github.io/hotel_toxin/landing-page.html)
-- [**Sign in page**](https://yarlykov.github.io/hotel_toxin/sign-in-page.html)
-- [**Registration page**](https://yarlykov.github.io/hotel_toxin/registration-page.html)
-- [**Search room**](https://yarlykov.github.io/hotel_toxin/search-room-page.html)
-- [**Room details**](https://yarlykov.github.io/hotel_toxin/room-details-page.html)
+- [**Landing**](https://fullstack-development.github.io/frontend-intership-toxin/landing-page.html)
+- [**Sign in page**](https://fullstack-development.github.io/frontend-intership-toxin/sign-in-page.html )
+- [**Registration page**](https://fullstack-development.github.io/frontend-intership-toxin/registration-page.html)
+- [**Search room**](https://fullstack-development.github.io/frontend-intership-toxin/search-room-page.html)
+- [**Room details**](https://fullstack-development.github.io/frontend-intership-toxin/room-details-page.html)
 
 ## Развертывание
+
+**Clone repository:**
+
+```bash
+  https://github.com/fullstack-development/frontend-intership-toxin.git
+```
 
 `npm install` - **installing dependencies**
 
