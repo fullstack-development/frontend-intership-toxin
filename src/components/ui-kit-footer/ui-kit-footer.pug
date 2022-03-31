@@ -1,0 +1,10 @@
+mixin ui-kit-footer({ footerLinks=[], withGrayBackground=false })
+  - const backgroundClass = withGrayBackground ? "ui-kit-header_background_gray" : ""
+
+  footer.ui-kit-footer
+    .ui-kit-footer__container
+      each footerLink in footerLinks
+        a&attributes({
+          class: 'ui-kit-footer__link',
+          href: `./${footerLink.link}.html`
+        }) #{footerLink.name}

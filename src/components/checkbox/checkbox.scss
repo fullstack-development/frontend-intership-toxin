@@ -1,0 +1,70 @@
+@import '@variables';
+
+.checkbox {
+  display: inline-block;
+  min-height: 20px;
+  cursor: pointer;
+
+  &__container {
+    min-height: 20px;
+    margin-left: 30px;
+  }
+
+  &__box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: -30px;
+    background-color: #fff;
+    border: $mainBorder;
+    border-radius: 4px;
+
+    &:hover {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:focus-within + .checkbox__box {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
+
+    &:checked + .checkbox__box {
+      border-color: $designColor_main;
+    }
+
+    &:checked + .checkbox__box::after {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      width: 6px;
+      height: 8px;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      border-image: $mainGradient;
+      border-image-slice: 1;
+      transform: rotate(45deg);
+      content: '';
+    }
+  }
+
+  &__title {
+    &_font_bold {
+      color: $textColor_75;
+      font-weight: bold;
+    }
+  }
+
+  &__description {
+    display: inline-block;
+    margin-top: 5px;
+    color: $textColor_50;
+    font: 400 0.8571rem/14px $mainFont;
+  }
+}

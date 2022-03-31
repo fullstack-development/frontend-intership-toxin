@@ -1,0 +1,122 @@
+extends ../../layouts/main-layout.pug
+include ../../components/room-search-card/room-search-card.pug
+
+block variables
+  -
+    const title = "Landing page"
+    const description = "Отель Toxin в самом центре приглашает остановиться\
+    в одном из уютных номеров. Отличный вид, просторная закрытая парковка.\
+    Онлайн-бронирование"
+    const keywords = "жильё, проживание, Отель, Отели, специальные предложения,\
+    пакеты услуг, предложения на выходные со скидками, специальные предложения."
+
+block content
+  main.landing
+    .landing__container
+      .landing__search-room-card
+        +room-search-card({
+          title: "Найдём номера под ваши\u00A0пожелания",
+          formAction: "search-room-page",
+          dateDropdown: { 
+            type: "text",
+            dataType: "date-dropdown-start",
+            dataTypeEnd: "date-dropdown-end",
+            placeholder: "ДД.ММ.ГГГГ",
+            name: "date",
+            autocomplete: "off", 
+            hasArrow: true,
+            hasTwoInputs: true,
+            startTitle: "прибытие",
+            endTitle: "выезд",
+            withMask: true,
+            options: {
+              inline: true,
+              dateFormat: 'dd.mm.yyyy',
+              position: 'bottom left',
+              hasTwoInputs: true,
+              initialDates: ['2019-08-19', '2019-08-23'],
+            },
+          },
+          dropdown: {
+            isOpen: false, 
+            group: "guests", 
+            elements: [
+              { title: "Взрослые", id: "adults", count: 0 },
+              { title: "Дети", id: "children", count: 0 }, 
+              { title: "Младенцы", id: "babies", count: 0 },
+            ],
+            options: {
+              defaultText: 'Сколько гостей',
+              buttons: true,
+              total: true,
+              numberOfLetters: 35,
+              plurals: {
+                totalItems: ['гость', 'гостя', 'гостей'],
+                babies: ['младенец', 'младенца', 'младенцев'],
+              },
+            }
+          },
+          button: {
+            buttonName: "подобрать номер",
+            type: "submit",
+            buttonVariation: "withArrow",
+            textColor: "white",
+            size: "large",
+          }
+        })
+      p.landing__self-presentation Лучшие номера для вашей работы, отдыха и просто вдохновения
+  
+block footer
+  +footer({
+    hasBorder: false,
+    logo: { type: "colorWithText" },
+    footerText: "Бронирование номеров в лучшем отеле\
+    2019 года по версии ассоциации «Отельные взгляды»",
+    footerNavigation: {
+      column1: { 
+        title: "навигация", 
+        linksList: [
+          { name: "О нас", url: "./error-page.html" },
+          { name: "Новости", url: "./error-page.html" },
+          { name: "Служба поддержки", url: "./error-page.html" },
+          { name: "Услуги", url: "./error-page.html" },
+        ]
+      },
+      column2: { 
+        title: "О нас", 
+        linksList: [
+          { name: "О сервисе", url: "./error-page.html" },
+          { name: "Наша команда", url: "./error-page.html" },
+          { name: "Вакансии", url: "./error-page.html" },
+          { name: "Инвесторы", url: "./error-page.html" },
+        ]
+      },
+      column3: { 
+        title: "Служба поддержки", 
+        linksList: [
+          { name: "Соглашение", url: "./error-page.html" },
+          { name: "Сообщества", url: "./error-page.html" },
+          { name: "Связь с нами", url: "./error-page.html" },
+        ]
+      },
+    },
+    subscribe: {
+      title: "Подписка",
+      text: "Получайте специальные предложения и новости сервиса"
+    },
+    copyright: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0защищены.",
+    social: [
+      { title: "twitter", link: "https://twitter.com" },
+      { title: "facebook", link: "https://facebook.com" },
+      { title: "instagram", link: "https://instagram.com" },
+    ],
+  })
+
+  +footer-mobile({
+    copyright: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0защищены.",
+    social: [
+      { title: "twitter", link: "https://twitter.com" },
+      { title: "facebook", link: "https://facebook.com" },
+      { title: "instagram", link: "https://instagram.com" },
+    ],
+  })

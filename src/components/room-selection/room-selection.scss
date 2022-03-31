@@ -1,0 +1,47 @@
+@import '@variables';
+@import '@mixins';
+
+.room-selection {
+  min-height: 100%;
+
+  &__heading {
+    @media (max-width: 1280px) {
+      padding-left: 60px;
+    }
+    @media (max-width: 718px) {
+      max-width: 270px;
+    }
+  }
+
+  &__widgets-list {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 12px;
+    grid-template-columns: repeat(auto-fit, 270px);
+    justify-content: center;
+    max-width: 834px;
+    margin: 0;
+    padding: 22px 0 40.5px 0;
+    list-style: none;
+
+    @media (max-width: 1280px) {
+      max-width: 1280px;
+      padding: 20px 30px 40px;
+    }
+
+    @media (max-width: 980px) {
+      max-width: 900px;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+    margin-right: 13px;
+
+    @media (max-width: 1280px) {
+      margin: 0;
+    }
+  }
+}

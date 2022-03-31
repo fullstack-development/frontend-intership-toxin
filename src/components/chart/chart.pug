@@ -1,0 +1,4 @@
+mixin chart( votes=[] )
+  - const votesData = JSON.stringify(votes)
+
+  .chart.js-chart(data-votes=`${votesData}`)

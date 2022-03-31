@@ -1,0 +1,39 @@
+include ../../components/links/links.pug
+include ../../components/subscribe/subscribe.pug
+include ../../components/logo/logo.pug
+include ../../components/social/social.pug
+
+mixin footer(params = {})
+  -
+    const {
+      logo={},
+      footerText="",
+      footerNavigation={},
+      subscribe={},
+      copyright="",
+      social={},
+      hasBorder=false
+    } = params
+
+    const borderTopClass = hasBorder ? "footer_with-top-border" : ""
+  
+  footer.footer(class=borderTopClass)
+    .footer__container
+      .footer__wrapper 
+        section.footer__about
+          +logo(logo)
+          p.footer__presentation #{footerText}
+        section.footer__links
+          .footer__links-column
+            +links(footerNavigation.column1)
+          .footer__links-column
+            +links(footerNavigation.column2)
+          .footer__links-column
+            +links(footerNavigation.column3)
+        .footer__subscribe
+          +subscribe(subscribe)
+    .footer__bottom
+      .footer__bottom-container
+        p.footer__copyright-text #{copyright}
+        section.footer__social
+          +social(social)

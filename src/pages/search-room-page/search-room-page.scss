@@ -1,0 +1,77 @@
+@import '@variables';
+
+.search-room {
+  &__container {
+    display: flex;
+    max-width: 1160px;
+    margin: 0 auto;
+    margin-bottom: 65px;
+
+    @media (max-width: 1280px) {
+      max-width: 1280px;
+    }
+  }
+
+  &__filter {
+    box-sizing: content-box;
+    max-width: 266px;
+    margin-top: 30px;
+
+    @media (max-width: 1280px) {
+      position: absolute;
+      transform: translateX(-270px);
+    }
+  }
+
+  &__room-selection {
+    width: 100%;
+    margin: 30px 0 0 59px;
+
+    @media (max-width: 1280px) {
+      margin: 30px 0 0;
+    }
+  }
+
+  &__filter-button {
+    display: none;
+    background-color: $designColor_main;
+    border: 1px solid #fff;
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 5px;
+      height: 80%;
+      background-color: #fff;
+      border-radius: 10px;
+      transform: translate(-50%, -50%);
+      content: '';
+    }
+
+    @media (max-width: 1280px) {
+      position: fixed;
+      top: 50%;
+      left: 100%;
+      display: block;
+      width: 30px;
+      height: 160px;
+    }
+  }
+}
+
+.search-room__filter.search-room__filter_opened {
+  z-index: 3;
+  min-height: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: $cardsBackground;
+  border-radius: 4px;
+  box-shadow: $mainBoxShadow;
+  transform: translateX(0);
+}

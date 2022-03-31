@@ -1,0 +1,14 @@
+@import '@variables';
+@import '@mixins';
+
+.subscribe {
+  width: 100%;
+  padding-top: 4px;
+  font-family: $mainFont;
+
+  &__text {
+    @include font-body;
+
+    margin: 13px 0 23px 0;
+  }
+}

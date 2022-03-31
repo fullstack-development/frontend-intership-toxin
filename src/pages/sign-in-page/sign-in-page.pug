@@ -1,0 +1,50 @@
+extends ../../layouts/main-layout.pug
+include ../../components/login-card/login-card.pug
+
+block variables
+  -
+    const title = "Sign in page"
+    const description = "Отель Toxin в самом центре приглашает остановиться\
+    в одном из уютных номеров. Отличный вид, просторная закрытая парковка.\
+    Онлайн-бронирование"
+    const keywords = "жильё, проживание, Отель, Отели, специальные предложения,\
+    пакеты услуг, предложения на выходные со скидками, специальные предложения."
+
+block content
+  main.sign-in
+    .sign-in__container
+      .sign-in__entry-card
+        +login-card({
+          title: "Войти",
+          formAction: "sign-in-page",
+          textField: {
+            login: {
+              placeholder:"Email",
+              type: "email",
+              name: "email",
+              autocomplete: "on"
+            },
+            password: {
+              placeholder: "Пароль",
+              type: "password",
+              name: "password",
+              autocomplete: "on"
+            }
+          },
+          button: {
+            submit: {
+              buttonName: "войти",
+              type: "submit",
+              buttonVariation: "withArrow",
+              textColor: "white",
+              size: "large",
+            },
+            question: {
+              buttonName: "создать",
+              buttonVariation: "fillWhite",
+              textColor: "purple",
+              size: "small",
+              link: "registration-page",
+            }
+          }
+        })

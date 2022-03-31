@@ -1,0 +1,99 @@
+@import '@variables';
+@import '@mixins';
+
+.navigation {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 50px;
+    list-style-type: none;
+
+    @media (max-width: 1280px) {
+      padding-left: 20px;
+    }
+  }
+
+  &__item {
+    padding-right: 20px;
+
+    &_with-arrow-up {
+      position: relative;
+      padding-right: 46px;
+
+      &::after {
+        @include font-material-icons;
+
+        position: absolute;
+        right: 20px;
+        color: $textColor_50;
+        line-height: 20px;
+        cursor: pointer;
+        content: '\e5ce';
+      }
+    }
+
+    &_with-arrow-down {
+      position: relative;
+      padding-right: 46px;
+
+      &::after {
+        @include font-material-icons;
+
+        position: absolute;
+        right: 20px;
+        color: $textColor_50;
+        line-height: 20px;
+        cursor: pointer;
+        content: '\e5cf';
+      }
+    }
+  }
+
+  &__link {
+    color: $textColor_50;
+    text-decoration: none;
+    cursor: pointer;
+
+    &_active {
+      font-weight: 700;
+    }
+
+    &:focus,
+    &:hover {
+      color: $textColor_75;
+      outline: none;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 25px;
+    left: 40%;
+    z-index: 1;
+    min-width: 140px;
+    background: $cardsBackground;
+    border-radius: $mainBorderRadius;
+    box-shadow: $mainBoxShadow;
+    transform: translateX(-50%);
+
+    &_visibility-hidden {
+      visibility: hidden;
+    }
+
+    @media (max-width: 960px) {
+      background: $cardsBackground;
+      box-shadow: $headerFooterBoxShadow;
+    }
+
+    & .links__item {
+      padding: 7px 14px;
+      text-align: center;
+
+      @media (max-width: 960px) {
+        font-size: 1.5rem;
+        line-height: 21px;
+      }
+    }
+  }
+}

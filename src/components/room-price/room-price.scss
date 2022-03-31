@@ -1,0 +1,19 @@
+@import '@variables';
+
+.room-price {
+  color: $textColor_50;
+  font: 0.8571rem/18px $mainFont;
+
+  &__value {
+    color: $textColor_50;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 18px;
+  }
+
+  &__text {
+    padding-left: 5px;
+    font-weight: 400;
+    font-size: 0.8571rem;
+  }
+}

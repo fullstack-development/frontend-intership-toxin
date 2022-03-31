@@ -1,0 +1,12 @@
+include ../heading/heading.pug
+
+mixin links({ title="", linksList=[] })
+  .links
+    +heading({ level: "h3", title: title })
+    ul.links__list
+      each linkItem in linksList
+        li.links__item
+          a&attributes({
+            class: "links__link",
+            href: linkItem.url,
+          }) #{linkItem.name}

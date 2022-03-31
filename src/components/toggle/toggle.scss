@@ -1,0 +1,74 @@
+@import '@variables';
+
+.toggle {
+  display: block;
+  color: $textColor_50;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__container {
+    width: 100%;
+    min-height: 20px;
+    margin-left: 50px;
+  }
+
+  &__box {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    margin-left: -50px;
+    border: $mainBorder;
+    border-radius: 10px;
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      background: $textColor_25;
+      border-radius: 50%;
+      transition: 0.3s;
+      content: '';
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked + .toggle__box {
+      border-color: $designColor_main;
+    }
+
+    &:focus + .toggle__box {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
+
+    &:hover ~ .toggle__title {
+      color: $textColor_75;
+    }
+
+    &:focus ~ .toggle__title {
+      color: $textColor_75;
+    }
+
+    &:checked + .toggle__box::before {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      background: $mainGradient;
+      border-radius: 50%;
+      transform: translateX(20px);
+      content: '';
+    }
+  }
+}

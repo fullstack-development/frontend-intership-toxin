@@ -1,0 +1,31 @@
+@import '@variables';
+
+.links {
+  &__list {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+    list-style-type: none;
+  }
+
+  &__item {
+    padding-top: 21px;
+    font: 400 1rem/17px $mainFont;
+
+    &:first-child {
+      padding-top: 17px;
+    }
+  }
+
+  &__link {
+    color: $textColor_50;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      color: $textColor_75;
+      outline: none;
+    }
+  }
+}

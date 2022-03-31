@@ -1,0 +1,45 @@
+mixin button(params = {})
+  -
+    const {
+      type="button",
+      buttonName="button",
+      link="",
+      size="",
+      textColor="gray",
+      buttonVariation="",
+      disabled=false
+    } =  params
+    const sizeModifiers = {
+      small: "button__inner_size_small",
+      large: "button__inner_size_large",
+      stretching: "button__inner_size_stretching" 
+    }
+    const colorModifiers = {
+      purple: "button__inner_text-color_purple",
+      gray: "button__inner_text-color_gray",
+      white: "button__inner_text-color_white"
+    }
+
+    const mainClass = "button"
+    const buttonTag = link ? 'a' : 'button'
+    const buttonInlineModifier = buttonVariation === "inline" ? "button_variant_inline" : ""
+    const buttonFillModifier = buttonVariation === "fillWhite" ? "button__inner_fill_white" : ""
+    
+    const buttonAttributes = {
+      a: {
+        class: [mainClass, buttonInlineModifier],
+        href: `./${link}.html`,
+      },
+      button: {
+        class: [mainClass, buttonInlineModifier],
+        type: type,
+        disabled: disabled,
+      }
+    }
+
+  #{buttonTag}&attributes(buttonAttributes[buttonTag])
+    span.button__inner(
+      class=[colorModifiers[textColor], sizeModifiers[size], buttonFillModifier ]
+    ) #{buttonName}
+    if buttonVariation === 'withArrow'
+      span.button__arrow

@@ -1,0 +1,54 @@
+mixin dropdown({ isOpen=false, group="", elements=[], options={} })
+  -
+    const openClassModifier = isOpen ? "dropdown_open" : ""
+    const arrowClassModifier = isOpen ? "dropdown__arrow_up" : "dropdown__arrow_down"
+    const isGroupComfort = group === "comfort"
+    const inputValue = group === "guests" ? "Сколько гостей" : "Удобства номера"
+    const dropdownOptions = JSON.stringify(options)
+
+  .dropdown(
+    class=openClassModifier
+    data-options=`${dropdownOptions}`
+    ).js-dropdown
+    input&attributes({
+      type: "text", 
+      class: "dropdown__input js-dropdown__input", 
+      "data-type": "input", 
+      value: inputValue,
+      readonly: "readonly",
+    })
+    div(
+      class=`dropdown__arrow js-dropdown__arrow ${arrowClassModifier}`
+    )&attributes({"data-type": "arrow" })
+    .dropdown__drop.js-dropdown__drop
+      ul.dropdown__menu.js-dropdown__menu
+        each elem in elements
+          li.dropdown__menu-item(data-id=`${elem.id}`).js-dropdown__menu-item
+            .dropdown__menu-item-text #{elem.title}
+            .dropdown__controls
+              button&attributes({
+                class: [
+                  "dropdown__counter-button",
+                  "dropdown__counter-button_type_decrement",
+                  "js-dropdown__counter-button_type_decrement"
+                ],
+                type: "button",
+                "data-type": "decrement"
+              })
+              input&attributes({
+                class: "dropdown__counter js-dropdown__counter", 
+                type: "text", 
+                value: elem.count,
+                tabindex: -1,
+                readonly: "readonly",
+              })
+              button&attributes({
+                class: [
+                  "dropdown__counter-button",
+                  "dropdown__counter-button_type_increment",
+                  "js-dropdown__counter-button_type_increment"
+                ],
+                type: "button",
+                "data-type": "increment"
+              })
+

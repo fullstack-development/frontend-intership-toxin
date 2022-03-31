@@ -1,0 +1,165 @@
+@import '@variables';
+
+.header {
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: $headerFooterBoxShadow;
+
+  &__container {
+    min-width: 320px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 140px;
+    color: $textColor_50;
+
+    @media (max-width: 1280px) {
+      padding: 13px 30px 13px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px 30px 12px;
+    }
+  }
+
+  &__menu-burger {
+    display: none;
+
+    @media (max-width: 1000px) {
+      position: relative;
+      display: block;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+
+      .header__menu-burger-button {
+        position: absolute;
+        top: 17px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $textColor_50;
+        transition: all 0.3s ease 0s;
+      }
+
+      &::after,
+      &::before {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $textColor_50;
+        transition: all 0.3s ease 0s;
+        content: '';
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1000px) {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      z-index: 2;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+      background-color: $uiKitPagesBackground;
+      transition: 0.1s;
+    }
+  }
+
+  &__menu-burger.header__menu-burger_active {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+    z-index: 3;
+
+    &::before {
+      top: 17px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: 17px;
+      transform: rotate(-45deg);
+    }
+
+    & .header__menu-burger-button {
+      transform: scale(0);
+    }
+
+    & + .header__menu {
+      left: 0;
+    }
+  }
+
+  &__navigation .navigation__list {
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      padding-bottom: 70px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .navigation__item {
+      padding: 0 50px 20px 0;
+      text-align: center;
+    }
+    .navigation__link {
+      font-size: 1.5rem;
+    }
+    .navigation__item-dropdown {
+      padding-right: 50px;
+
+      &::after {
+        font-size: 2.2143rem;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &__login {
+    display: flex;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+
+  &__login-entry {
+    margin-right: 20px;
+
+    @media (max-width: 1000px) {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__logged {
+    margin: 0;
+    padding: 6px 0 6px 20px;
+    border-left: $mainBorder;
+
+    @media (max-width: 1000px) {
+      padding: 0 50px 0 0;
+      color: $mainTextColor;
+      font-size: 1.5rem;
+      border-left: none;
+    }
+  }
+}

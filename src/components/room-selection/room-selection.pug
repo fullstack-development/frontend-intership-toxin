@@ -1,0 +1,18 @@
+include ../heading/heading.pug
+include ../pagination/pagination.pug
+include ../room-review-widget/room-review-widget.pug
+
+mixin room-selection({ title, widgets })
+  .room-selection
+    .room-selection__heading
+      +heading({ level: "h1", title: title })
+    ul.room-selection__widgets-list
+      each widget in widgets
+        li.room-selection__widgets-item
+          +room-review-widget(widget)
+    .room-selection__pagination
+      +pagination({
+        pageSize: 12,
+        amountOfElements: 180,
+        showNavigator: true,
+      })

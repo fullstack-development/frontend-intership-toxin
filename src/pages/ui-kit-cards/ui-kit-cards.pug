@@ -1,0 +1,268 @@
+extends ../../layouts/ui-kit-layout.pug
+include ../../components/room-search-card/room-search-card.pug
+include ../../components/registration-card/registration-card.pug
+include ../../components/login-card/login-card.pug
+include ../../components/booking-card/booking-card.pug
+include ../../components/room-review-widget/room-review-widget.pug
+include ../../components/date-dropdown/date-dropdown.pug
+
+block variables
+  - const title = "Cards"
+
+block header
+  +ui-kit-header({ withGrayBackground: true })  
+
+block content
+  .cards-page
+    main.cards-page__container
+      .cards-page__content
+        .cards-page__column
+          +room-search-card({
+            title: "Найдём номера под ваши\u00A0пожелания",
+            formAction: "error-page",
+            dateDropdown: { 
+              type: "text",
+              dataType: "date-dropdown-start",
+              dataTypeEnd: "date-dropdown-end",
+              placeholder: "ДД.ММ.ГГГГ",
+              name: "date",
+              autocomplete: "off", 
+              hasArrow: true,
+              hasTwoInputs: true,
+              startTitle: "прибытие",
+              endTitle: "выезд",
+              withMask: true,
+              options: {
+                inline: true,
+                dateFormat: 'dd.mm.yyyy',
+                position: 'bottom left',
+                hasTwoInputs: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              },
+            },
+            dropdown: {
+              isOpen: false, 
+              group: "guests", 
+              elements: [
+                { title: "Взрослые", id: "adults", count: 0 },
+                { title: "Дети", id: "children", count: 0 }, 
+                { title: "Младенцы", id: "babies", count: 0 },
+              ],
+              options: {
+                defaultText: 'Сколько гостей',
+                buttons: true,
+                total: true,
+                numberOfLetters: 35,
+                plurals: {
+                  totalItems: ['гость', 'гостя', 'гостей'],
+                  babies: ['младенец', 'младенца', 'младенцев'],
+                },
+              }
+            },
+            button: {
+              buttonName: "подобрать номер",
+              type: "button",
+              buttonVariation: "withArrow",
+              textColor: "white",
+              size: "large",
+            }
+          })
+          
+          +registration-card({
+            title: "Регистрация аккаунта",
+            formAction: "error-page",
+            textField: {
+              name: { 
+                placeholder: "Имя",
+                type: "text",
+                name: "name",
+                autocomplete: "on"
+              },
+              surname: {
+                placeholder: "Фамилия",
+                type: "text",
+                name: "surname",
+                autocomplete: "on"
+              },
+              birthday: {
+                placeholder: "ДД.ММ.ГГГГ",
+                type: "text",
+                name: "birthday",
+                autocomplete: "on",
+                withMask: true,
+              },
+              login: {
+                placeholder:"Email",
+                type: "email",
+                name: "email",
+                autocomplete: "on"
+              },
+              password: {
+                placeholder: "Пароль",
+                type: "password",
+                name: "password",
+                autocomplete: "on"
+              }
+            },
+            radio: {
+              men: { group: "gender", title: "Мужчина", checked: true },
+              women: { group: "gender", title: "Женщина", checked: false }
+            },
+            button: {
+              submit: {
+                buttonName: "зарегистрироваться",
+                type: "button",
+                buttonVariation: "withArrow",
+                textColor: "white",
+                size: "large",
+              },
+              question: {
+                buttonName: "войти",
+                buttonVariation: "fillWhite",
+                textColor: "purple",
+                size: "small",
+                link: "sign-in-page",
+              }
+            }
+          })
+
+        .cards-page__column
+          +booking-card({
+            formAction: "error-page",
+            header: {
+              number: { symbol: "№", value: "888", text: "люкс" },
+              price: { value: "9 990", text: "в сутки" },
+            },            
+            dateDropdown: { 
+              type: "text",
+              dataType: "date-dropdown-start",
+              dataTypeEnd: "date-dropdown-end",
+              placeholder: "ДД.ММ.ГГГГ",
+              name: "date",
+              autocomplete: "off", 
+              hasArrow: true,
+              hasTwoInputs: true,
+              startTitle: "прибытие",
+              endTitle: "выезд",
+              withMask: true,
+              options: {
+                inline: true,
+                dateFormat: 'dd.mm.yyyy',
+                position: 'bottom left',
+                hasTwoInputs: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              },
+            },
+            dropdown: {
+              isOpen: false, 
+              group: "guests", 
+              elements: [
+                { title: "Взрослые", id: "adults", count: 3 },
+                { title: "Дети", id: "children", count: 0 }, 
+                { title: "Младенцы", id: "babies", count: 0 },
+              ],
+              options: {
+                defaultText: 'Сколько гостей',
+                buttons: true,
+                total: true,
+                numberOfLetters: 35,
+                plurals: {
+                  totalItems: ['гость', 'гостя', 'гостей'],
+                  babies: ['младенец', 'младенца', 'младенцев'],
+                },
+              }
+            },
+            button: {
+              submit: {
+                buttonName: "забронировать",
+                type: "button",
+                buttonVariation: "withArrow",
+                textColor: "white",
+                size: "large",
+              },
+            }
+          })
+          +login-card({
+            title: "Войти",
+            formAction: "error-page",
+            textField: {
+              login: {
+                placeholder:"Email",
+                type: "email",
+                name: "email",
+                autocomplete: "on"
+              },
+              password: {
+                placeholder: "Пароль",
+                type: "password",
+                name: "password",
+                autocomplete: "on"
+              }
+            },
+            button: {
+              submit: {
+                buttonName: "войти",
+                type: "button",
+                buttonVariation: "withArrow",
+                textColor: "white",
+                size: "large",
+              },
+              question: {
+                buttonName: "создать",
+                buttonVariation: "fillWhite",
+                textColor: "purple",
+                size: "small",
+                link: "sign-in-page",
+              }
+            }
+          })
+
+        .cards-page__column
+          .cards-page__calendar
+            +date-dropdown({ 
+              dataType: "inline-date-dropdown",
+              inline: true,
+              demo: true,
+              options: {
+                dateFormat: 'd M',
+                inline: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              }, 
+            })
+
+          +room-review-widget({
+            carousel: {
+              images: [
+                "room-img-1.jpg",
+                "room-img-2.jpg",
+                "room-img-3.jpg",
+                "room-img-4.jpg",
+              ],
+              options: {
+                dots: true,
+                zIndex: 10,
+              }
+            },
+            roomNumber: { symbol: "№", value: "888", text: "люкс" },
+            roomPrice: { value: "9 990", text: "в сутки" },
+            rating: 5,
+            commentCount: { value: "145", text: "Отзывов" } 
+           })
+          +room-review-widget({
+            carousel: {
+              images: [
+                "room-img-2.jpg",
+                "room-img-5.jpg",
+                "room-img-6.jpg",
+                "room-img-7.jpg",
+              ],
+              options: {
+                dots: true,
+                zIndex: 10,
+              }
+            },
+            roomNumber: { symbol: "№", value: "840", text: "люкс" },
+            roomPrice: { value: "9 900", text: "в сутки" },
+            rating: 4,
+            commentCount: { value: "65", text: "Отзывов" } 
+          })

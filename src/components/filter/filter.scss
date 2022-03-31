@@ -1,0 +1,28 @@
+@import '@variables';
+
+.filter {
+  &__dropdown-guests {
+    max-width: 266px;
+    margin-top: 20px;
+  }
+
+  &__range-slider {
+    margin-top: 30px;
+  }
+
+  &__checkbox {
+    margin-top: 30px;
+  }
+
+  &__rich-checkbox {
+    margin-top: 30px;
+  }
+
+  &__dropdown-comfort {
+    margin-top: 30px;
+  }
+
+  &__expandable-checkbox {
+    margin-top: 30px;
+  }
+}

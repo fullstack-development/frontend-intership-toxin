@@ -1,0 +1,18 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "node": true
+  },
+  "extends": ["airbnb/base", "plugin:fsd/all"],
+  "globals": {
+    "$": "readonly",
+    "jQuery": "readonly"
+  },
+  "plugins": ["fsd", "pug"],
+  "rules": {
+    "no-new": "off",
+    "import/no-unresolved": "off"
+  }
+}

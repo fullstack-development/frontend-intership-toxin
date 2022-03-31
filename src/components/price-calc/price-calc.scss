@@ -1,0 +1,53 @@
+@import '@variables';
+@import '@mixins';
+
+.price-calc {
+  @include font-body;
+
+  &__undiscounted {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__service-charge {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    min-width: 214px;
+    padding-top: 10px;
+  }
+
+  &__icon {
+    margin: 0 auto 0 5px;
+  }
+
+  &__additional-services {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 14px;
+    line-height: 18px;
+  }
+}
+
+.additional-services {
+  width: 214px;
+}
+
+.total-price {
+  display: flex;
+  align-items: baseline;
+  padding-top: 28px;
+  color: $mainTextColor;
+  font: 700 1.3571rem/23px $mainFont;
+
+  &__text {
+    font-family: $mainFont, Arial, sans-serif;
+    vertical-align: text-bottom;
+  }
+
+  &__points {
+    width: 100%;
+    margin: 0 5px;
+    border-bottom: dotted 1px $textColor_25;
+  }
+}

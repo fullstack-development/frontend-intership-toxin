@@ -1,0 +1,62 @@
+@import '@variables';
+@import '@mixins';
+
+.room-dignities {
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 16px;
+  }
+
+  &__icon-wrapper {
+    padding-top: 4px;
+  }
+
+  &__icon {
+    display: inline-block;
+    font: 3.4286rem/41px 'Material Icons', sans-serif;
+
+    &_type {
+      &_mood::before {
+        content: '\e7f2';
+      }
+      &_location-city::before {
+        content: '\e7f1';
+      }
+      &_whatshot::before {
+        content: '\e80e';
+      }
+    }
+
+    &_color_purple-gradient {
+      @include text-gradient-fill($mainGradient);
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+    color: rgba(31, 32, 65, 0.75);
+    font-size: 1rem;
+    line-height: 24px;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-weight: normal;
+  }
+
+  &__line {
+    height: 1px;
+    margin: 0;
+    color: rgba(31, 32, 65, 0.1);
+    background-color: rgba(31, 32, 65, 0.1);
+    border: none;
+  }
+}

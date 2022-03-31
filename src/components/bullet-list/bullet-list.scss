@@ -1,0 +1,28 @@
+@import '@variables';
+@import '@mixins';
+
+.bullet-list {
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    @include font-body;
+
+    display: flex;
+    align-items: baseline;
+    padding-top: 10px;
+
+    &:first-child {
+      padding-top: 9px;
+    }
+  }
+
+  &__item::before {
+    min-width: 10px;
+    min-height: 10px;
+    margin-right: 11px;
+    background: $textColor_25;
+    border-radius: 50%;
+    content: '';
+  }
+}

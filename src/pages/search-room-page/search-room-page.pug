@@ -1,0 +1,355 @@
+extends ../../layouts/main-layout.pug
+include ../../components/filter/filter.pug
+include ../../components/room-selection/room-selection.pug
+
+block variables
+  -
+    const title = "Search room"
+    const description = "Отель Toxin в самом центре приглашает остановиться\
+    в одном из уютных номеров. Отличный вид, просторная закрытая парковка.\
+    Онлайн-бронирование"
+    const keywords = "жильё, проживание, Отель, Отели, специальные предложения,\
+    пакеты услуг, предложения на выходные со скидками, специальные предложения."
+
+block content
+  main.search-room.js-search-room
+    .search-room__container
+      aside.search-room__filter.js-search-room__filter
+        +filter({
+          dateDropdown: {
+            title: "даты пребывания в отеле",
+            options: { 
+              type: "text",
+              dataType: "filter-date-dropdown",
+              placeholder: "дд.мм - дд.мм",
+              isLowercase: true,
+              name: "text", 
+              autocomplete: "off",
+              hasArrow: true,
+              isReadonly: true,
+              options: {
+                dateFormat: 'd M',
+                multipleDatesSeparator: ' - ',
+                initialDates: ['2019-08-19', '2019-08-23'],
+                smallSize: true,
+              },
+            }
+          },
+          dropdownGuests: {
+            title: "гости",
+            options: {
+              isOpen: false,
+              group: "guests", 
+              elements: [
+                { title: "Взрослые", id: "adults", count: 2 },
+                { title: "Дети", id: "children", count: 0 }, 
+                { title: "Младенцы", id: "babies", count: 1 },
+              ],
+              options: {
+                defaultText: 'Сколько гостей',
+                buttons: true,
+                total: true,
+                numberOfLetters: 35,
+                plurals: {
+                  totalItems: ['гость', 'гостя', 'гостей'],
+                  babies: ['младенец', 'младенца', 'младенцев'],
+                },
+              }
+            }
+          },
+          rangeSlider: {
+            title: "диапазон цены",
+            description: "Стоимость за сутки пребывания в номере",
+            options: {
+              range: true,
+              min: 0,
+              max: 15000,
+              step: 100,
+              values: [5000, 10000],
+            }
+          },
+          checkbox: {	
+            title: "Правила дома",
+            dropdown: false,
+            isRich: false,
+            listItems: [
+              { title: "Можно курить" },
+              { title: "Можно с питомцами" },
+              { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true }
+            ]
+          },
+          richCheckbox: {	
+            title: "доступность",
+            dropdown: false,
+            isRich: true,
+            listItems: [
+              { 
+                title: "Широкий коридор",
+                isRich: true, 
+                description: "Ширина коридоров в номере не\u00A0менее 91 см." 
+              },
+              { 
+                title: "Помощник для инвалидов",
+                isRich: true, 
+                description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
+              }
+            ]
+          },
+          dropdownComfort: { 
+            title: "удобства номера",
+            isOpen: false, 
+            group: "comfort", 
+            elements: [
+              { title: "Спальни", id: "bedrooms", count: 2 }, 
+              { title: "Кровати", id: "beds", count: 2 }, 
+              { title: "Ванные комнаты", id: "bathrooms", count: 0 }
+            ],
+            options: {
+              defaultText: 'Удобства номера',
+              maxItems: 5,
+              buttons: false,
+              plurals: {
+                bedrooms: ['спальня', 'спальни', 'спален'],
+                beds: ['кровать', 'кровати', 'кроватей'],
+                bathrooms: ['ванная комната', 'ванных комнаты', 'ванных комнат'],
+              },
+            }
+          },
+          expandableCheckbox: {	
+            title: "дополнительные удобства",
+              isDropdown: true,
+              isRich: false,
+              listItems: [
+                { title: "Завтрак" }, 
+                { title: "Письменный стол", checked: true }, 
+                { title: "Стул для кормления", checked: true },
+                { title: "Кроватка", checked: true },
+                { title: "Телевизор" },
+                { title: "Шампунь" }
+              ]
+          },
+        })
+        .search-room__filter-button.js-search-room__filter-button
+        
+      section.search-room__room-selection
+        +room-selection({
+          title: "Номера, которые мы для вас подобрали",
+          widgets: [
+            {
+              carousel: {
+                images: [
+                  "room-img-1.jpg",
+                  "room-img-2.jpg",
+                  "room-img-3.jpg",
+                  "room-img-4.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "888", text: "люкс" },
+              roomPrice: { value: "9 990", text: "в сутки" },
+              rating: 5,
+              commentCount: { value: "145", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-2.jpg",
+                  "room-img-5.jpg",
+                  "room-img-6.jpg",
+                  "room-img-7.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "840" },
+              roomPrice: { value: "9 900", text: "в сутки" },
+              rating: 4,
+              commentCount: { value: "65", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-3.jpg",
+                  "room-img-2.jpg",
+                  "room-img-3.jpg",
+                  "room-img-4.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "980", text: "люкс" },
+              roomPrice: { value: "8 500", text: "в сутки" },
+              rating: 3,
+              commentCount: { value: "35", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-4.jpg",
+                  "room-img-3.jpg",
+                  "room-img-2.jpg",
+                  "room-img-1.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "856" },
+              roomPrice: { value: "7 300", text: "в сутки" },
+              rating: 5,
+              commentCount: { value: "19", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-5.jpg",
+                  "room-img-4.jpg",
+                  "room-img-3.jpg",
+                  "room-img-2.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "740" },
+              roomPrice: { value: "6 000", text: "в сутки" },
+              rating: 4,
+              commentCount: { value: "44", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-6.jpg",
+                  "room-img-5.jpg",
+                  "room-img-4.jpg",
+                  "room-img-3.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "982" },
+              roomPrice: { value: "5 800", text: "в сутки" },
+              rating: 3,
+              commentCount: { value: "56", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-7.jpg",
+                  "room-img-6.jpg",
+                  "room-img-5.jpg",
+                  "room-img-4.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "678" },
+              roomPrice: { value: "5 500", text: "в сутки" },
+              rating: 5,
+              commentCount: { value: "45", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-8.jpg",
+                  "room-img-5.jpg",
+                  "room-img-6.jpg",
+                  "room-img-7.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "450" },
+              roomPrice: { value: "5 300", text: "в сутки" },
+              rating: 4,
+              commentCount: { value: "39", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-9.jpg",
+                  "room-img-8.jpg",
+                  "room-img-7.jpg",
+                  "room-img-6.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "350" },
+              roomPrice: { value: "5 000", text: "в сутки" },
+              rating: 3,
+              commentCount: { value: "77", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-10.jpg",
+                  "room-img-9.jpg",
+                  "room-img-8.jpg",
+                  "room-img-7.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "666" },
+              roomPrice: { value: "5 000", text: "в сутки" },
+              rating: 5,
+              commentCount: { value: "25", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-11.jpg",
+                  "room-img-12.jpg",
+                  "room-img-3.jpg",
+                  "room-img-7.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "444" },
+              roomPrice: { value: "5 000", text: "в сутки" },
+              rating: 3,
+              commentCount: { value: "15", text: "Отзывов" } 
+            },
+            {
+              carousel: {
+                images: [
+                  "room-img-12.jpg",
+                  "room-img-11.jpg",
+                  "room-img-10.jpg",
+                  "room-img-9.jpg",
+                ],
+                options: {
+                  dots: true,
+                  zIndex: 10,
+                }
+              },
+              roomNumber: { symbol: "№", value: "352" },
+              roomPrice: { value: "5 000", text: "в сутки" },
+              rating: 3,
+              commentCount: { value: "55", text: "Отзывов" } 
+            },
+          ]
+        })      

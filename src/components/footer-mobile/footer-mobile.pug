@@ -1,0 +1,10 @@
+include ../logo/logo.pug
+include ../social/social.pug
+
+mixin footer-mobile({ copyright="", social={} })
+  footer.footer-mobile
+    .footer-mobile__wrapper
+      +logo({ type: "colorWithText" })
+      .footer-mobile__copyright-text #{copyright}
+      .footer-mobile__social
+        +social(social)

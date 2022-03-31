@@ -1,0 +1,8 @@
+mixin rating( rating=0 ) 
+  .rating
+    if rating < 5
+    - const emptyStar = 5 - rating;
+    - for(let i = 0; i < rating; i++)
+      span.rating__star
+    - for (let i = 0; i < emptyStar; i++)
+      span.rating__empty-star

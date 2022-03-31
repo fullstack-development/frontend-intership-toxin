@@ -1,0 +1,21 @@
+mixin colors( colorItems=[] )
+  -
+    const colors = [
+      "darkest-gray", "dark-gray", "gray",
+      "light-gray","lightest-gray",
+      "purple", "green"
+    ]
+
+  ul.colors
+    each colorItem in colorItems
+      li.colors__item
+        -
+          const { color } = colorItem
+          const colorClass = colors.includes(color) && `colors__preview_color_${color}`
+
+        div&attributes({
+          class: ["colors__preview", colorClass]
+        })
+        .colors__description
+          p.colors__name #{colorItem.description}
+          p.colors__code #{colorItem.colorCode}

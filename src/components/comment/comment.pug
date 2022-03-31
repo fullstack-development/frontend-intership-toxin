@@ -1,0 +1,28 @@
+include ../like/like.pug
+
+mixin comment(params = {})
+  -
+    const {
+      imageName="",
+      name="",
+      commentText="",
+      dateOfVisit="",
+      likeCount=0,
+      likeActive=false
+    } = params
+
+  .comment
+    .comment__header
+      img&attributes({
+        class: "comment__avatar",
+        src: require(`../../pages/room-details-page/images/avatars/${imageName}`),
+        alt: "avatar"
+      })
+      .comment__description
+        .comment__name #{name}
+        .comment__date-of-visit #{dateOfVisit}
+    .comment__body
+      .comment__like
+        +like({ icon: "heart", value: likeCount, active: likeActive })
+      p.comment__text
+        | #{commentText}

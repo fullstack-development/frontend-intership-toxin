@@ -1,0 +1,44 @@
+@import '@variables';
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    margin: 0;
+
+    &_level_h1 {
+      color: $mainTextColor;
+      font: 700 1.7143rem/29px $mainFont;
+    }
+
+    &_level_h2 {
+      color: $mainTextColor;
+      font: 700 1.3571rem/23px $mainFont;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    &_level_h3 {
+      padding-bottom: 5px;
+      color: $mainTextColor;
+      font: 700 0.8571rem/15px $mainFont;
+      text-transform: uppercase;
+    }
+  }
+
+  &__description {
+    padding-top: 5px;
+
+    &_lowercase {
+      font-size: 1rem;
+      text-transform: lowercase;
+    }
+
+    color: $textColor_50;
+    font-size: 0.8571rem;
+    text-transform: uppercase;
+  }
+}

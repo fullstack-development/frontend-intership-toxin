@@ -1,0 +1,40 @@
+include ../checkbox-list/checkbox-list.pug
+include ../heading/heading.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../range-slider/range-slider.pug
+include ../text-field/text-field.pug
+
+mixin filter(params = {})
+  -
+    const {
+      dateDropdown={},
+      dropdownGuests={},
+      rangeSlider={},
+      checkbox={},
+      richCheckbox={},
+      dropdownComfort={},
+      expandableCheckbox={}
+    } = params
+
+  .filter
+    .filter__date-dropdown
+      +heading({ level: "h3", title: dateDropdown.title })
+      +date-dropdown(dateDropdown.options)
+    .filter__dropdown-guests
+      +heading({ level: "h3", title: dropdownGuests.title })
+      +dropdown(dropdownGuests.options)
+    .filter__range-slider
+      +range-slider(rangeSlider)
+    .filter__checkbox
+      +heading({ level: "h3", title: checkbox.title })
+      +checkbox-list(checkbox)
+    .filter__rich-checkbox
+      +heading({ level: "h3", title: richCheckbox.title })
+      +checkbox-list(richCheckbox)
+    .filter__dropdown-comfort
+      +heading({ level: "h3", title: dropdownComfort.title })
+      +dropdown(dropdownComfort)
+    .filter__expandable-checkbox
+      +checkbox-list(expandableCheckbox)
+    .filter__open-label.js-filter__open-label

@@ -1,0 +1,30 @@
+@import '@variables';
+
+.cards-page {
+  display: flex;
+  min-height: 100%;
+  background: $uiKitPagesBackground;
+
+  &__column {
+    & > :not(:first-child) {
+      margin-top: 40px;
+    }
+    &:not(:first-child) {
+      margin-left: 40px;
+    }
+  }
+
+  &__container {
+    min-width: 1160px;
+    max-width: 1160px;
+    margin: 12px auto;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+  }
+}

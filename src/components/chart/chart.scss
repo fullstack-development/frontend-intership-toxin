@@ -1,0 +1,90 @@
+@import '@variables';
+@import '@mixins';
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  max-width: 313px;
+  max-height: 148px;
+  margin-top: 21px;
+
+  &__doughnut {
+    box-sizing: content-box;
+    width: 120px;
+    height: 120px;
+    margin-right: 25px;
+    padding-bottom: 7px;
+  }
+
+  &__body {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__circle {
+    transform: rotateY(180deg) rotateX(0deg) rotate(92deg)
+      translate(-1.4px, 1.5px);
+    cursor: pointer;
+    transition: all 0.5s;
+    fill: none;
+
+    &_focused {
+      stroke-width: 2.3;
+    }
+
+    &:hover {
+      stroke-width: 2.3;
+    }
+  }
+
+  &__sum-of-vote {
+    color: $mainTextColor;
+    font: 700 1.7143rem/29px $mainFont;
+  }
+
+  &__number {
+    font-size: 0.4643rem;
+    line-height: 30px;
+  }
+
+  &__text {
+    font-size: 0.25rem;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__legend-list {
+    margin: 0;
+    padding: 27px 2px 5px 0;
+  }
+
+  &__legend-item {
+    @include font-body;
+
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      color: $textColor_50;
+    }
+    &:focus {
+      color: $textColor_50;
+      outline: none;
+    }
+  }
+
+  &__legend-item-point {
+    position: absolute;
+    top: 7px;
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 8px;
+    content: '';
+  }
+}

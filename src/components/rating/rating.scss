@@ -1,0 +1,18 @@
+@import '@variables';
+@import '@mixins';
+
+.rating {
+  @include font-material-icons;
+  @include text-gradient-fill($mainGradient);
+
+  display: inline-block;
+  font-family: 'Material Icons', sans-serif;
+
+  &__star::before {
+    content: '\e838';
+  }
+
+  &__empty-star::before {
+    content: '\e83a';
+  }
+}

@@ -1,0 +1,59 @@
+@import '@variables';
+@import '@mixins';
+
+.type {
+  min-width: 403px;
+  max-width: 444px;
+  margin: 0;
+  padding: 0 8px 0 0;
+
+  &__h1 {
+    display: flex;
+    margin-bottom: 52px;
+    color: $mainTextColor;
+    font: 700 1.7143rem/29px $mainFont;
+  }
+
+  &__h2 {
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 52px;
+    color: $mainTextColor;
+    font: 700 1.3571rem/23px $mainFont;
+  }
+
+  &__h3 {
+    display: flex;
+    margin-bottom: 45px;
+    color: $mainTextColor;
+    font: 700 0.8571rem/15px $mainFont;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    @include font-body;
+
+    display: flex;
+    margin-right: 55px;
+    margin-bottom: 52px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 37px;
+    max-width: 50px;
+    margin: 0;
+    padding: 1px;
+    color: $textColor_25;
+    font-weight: 400;
+    font-family: $mainFont;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    margin: 0;
+    padding-left: 30px;
+    color: $mainTextColor;
+  }
+}

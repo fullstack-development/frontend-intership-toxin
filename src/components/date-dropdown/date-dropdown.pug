@@ -1,0 +1,65 @@
+include ../text-field/text-field.pug
+include ../heading/heading.pug
+
+mixin date-dropdown(params = {})
+  -
+    const {
+      type="",
+      dataType="",
+      dataTypeEnd="",
+      placeholder="",
+      name="date",
+      autocomplete="",
+      hasArrow=false,
+      isReadonly=false,
+      isLowercase=false,
+      hasTwoInputs=false,
+      startTitle="",
+      endTitle="",
+      options={},
+      inline=false,
+      withMask=false,
+      demo=false
+    } = params
+
+  - const inlineClass = inline ? "date-dropdown_inline" : ""
+  - const optionsData = JSON.stringify(options)
+
+  if demo
+    .date-dropdown&attributes({
+      class: inlineClass,
+    }).js-date-dropdown(data-options=`${optionsData}`)
+  else if hasTwoInputs
+    .date-dropdown.js-date-dropdown(data-options=`${optionsData}`)
+      .date-dropdown__two-inputs
+        .date-dropdown__start
+          +heading({ level: "h3", title: startTitle })
+          +text-field({
+            type,
+            dataType,
+            placeholder, 
+            name,
+            autocomplete,
+            hasArrow,
+            isReadonly,
+            isLowercase,
+            withMask,
+          })
+        .date-dropdown__end
+          +heading({ level: "h3", title: endTitle })
+          +text-field({
+            type,
+            placeholder, 
+            name,
+            autocomplete, 
+            hasArrow,
+            isReadonly,
+            isLowercase,
+            dataType: dataTypeEnd,
+            withMask,
+          })
+  else
+    .date-dropdown&attributes({
+      class: inlineClass,
+    }).js-date-dropdown(data-options=`${optionsData}`)
+        +text-field({ type, dataType, placeholder, name, autocomplete, hasArrow, isReadonly, isLowercase })

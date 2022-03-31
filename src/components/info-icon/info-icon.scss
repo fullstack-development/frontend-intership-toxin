@@ -1,0 +1,61 @@
+@import '@variables';
+
+.info-icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  border: $infoIconBorder;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &__text {
+    align-self: center;
+    padding: 0 7px;
+    color: rgba(85, 86, 126, 0.25);
+    font: 700 0.8571rem/14px $mainFont, Arial, sans-serif;
+    text-decoration: none;
+
+    &:focus-within {
+      outline: none;
+    }
+  }
+
+  &:hover {
+    border: $focusBorder;
+
+    .info-icon__text {
+      color: $textColor_50;
+    }
+  }
+
+  &:focus-within {
+    outline: none;
+    transform: translate3d(3px, -3px, -3px);
+  }
+
+  & [data-tooltip] {
+    position: relative;
+  }
+
+  & [data-tooltip]::after {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 200px;
+    padding: 7px;
+    color: $textColor_50;
+    background: $uiKitPagesBackground;
+    border-radius: $mainBorderRadius;
+    box-shadow: $infoIconBoxShadow;
+    opacity: 0;
+    transition: 0.5s;
+    content: attr(data-tooltip);
+    pointer-events: none;
+  }
+
+  & [data-tooltip]:hover::after {
+    top: 21px;
+    opacity: 1;
+  }
+}

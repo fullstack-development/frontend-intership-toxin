@@ -1,0 +1,17 @@
+@import '@variables';
+
+.headers-footers {
+  background: $uiKitPagesBackground;
+
+  &__header-sign-in {
+    margin-bottom: 40px;
+  }
+
+  &__header-logged {
+    margin-bottom: 40px;
+  }
+
+  &__footer {
+    margin-bottom: 40px;
+  }
+}

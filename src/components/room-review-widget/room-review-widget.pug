@@ -1,0 +1,29 @@
+include ../carousel/carousel.pug
+include ../rating/rating.pug
+include ../room-number/room-number.pug
+include ../room-price/room-price.pug
+
+mixin room-review-widget(params = {})
+  -
+    const {
+      carousel={},
+      roomNumber={},
+      roomPrice={},
+      rating=0,
+      commentCount={}
+    } = params
+
+  .room-review-widget
+    .room-review-widget__image
+      +carousel(carousel)
+    .room-review-widget__info
+      .room-review-widget__data
+        +room-number(roomNumber)
+        .room-review-widget__price
+          +room-price(roomPrice)
+      .room-review-widget__border
+      .room-review-widget__rating
+        +rating(rating)
+        .room-review-widget__comment-count
+          span.room-review-widget__comment-count-value #{commentCount.value}
+          span.room-review-widget__comment-count-text #{commentCount.text}

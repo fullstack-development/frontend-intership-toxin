@@ -1,0 +1,16 @@
+mixin range-slider({ title="", description="", options={} } = {})
+  - const sliderOptions = JSON.stringify(options);
+
+  .range-slider.js-range-slider
+    .range-slider__header
+      .range-slider__title #{title}
+      input&attributes({
+        class: "range-slider__value js-range-slider__value",
+        type: "text",
+        readonly: "readonly",
+        tabindex: -1,
+      })
+    .range-slider__scale.js-range-slider__scale(data-options=`${sliderOptions}`)
+      .range-slider__scale-border
+    p.range-slider__description #{description}
+    

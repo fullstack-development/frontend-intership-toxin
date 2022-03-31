@@ -1,0 +1,59 @@
+@import '@variables';
+
+.colors {
+  min-width: 270px;
+  margin: 0;
+  padding: 0 415px 0 10px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  &__preview {
+    min-width: 70px;
+    min-height: 70px;
+    border-radius: 6px;
+  }
+
+  &__preview_color {
+    &_darkest-gray {
+      background: $mainTextColor;
+    }
+    &_dark-gray {
+      background: $textColor_75;
+    }
+    &_gray {
+      background: $textColor_50;
+    }
+    &_light-gray {
+      background: $textColor_25;
+    }
+    &_lightest-gray {
+      background: $textColor_5;
+    }
+    &_purple {
+      background: $designColor_main;
+    }
+    &_green {
+      background: $designColor_second;
+    }
+  }
+
+  &__description {
+    max-width: 300px;
+    padding-left: 40px;
+    font: 400 1.3571rem/29px $mainFont;
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  &__code {
+    margin: 0;
+  }
+}

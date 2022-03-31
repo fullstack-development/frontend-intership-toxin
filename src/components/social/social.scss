@@ -1,0 +1,34 @@
+@import '@variables';
+@import '@mixins';
+
+.social {
+  &__link {
+    @include text-gradient-fill($mainGradient);
+
+    font: 1.7143rem 'Font Awesome', sans-serif;
+
+    &:focus {
+      border: $colorBorder;
+      border-radius: 4px;
+      outline: none;
+      box-shadow: 0 0 2px $designColor_main;
+    }
+
+    &:not(:first-child) {
+      margin-left: 22px;
+    }
+
+    &_twitter::before {
+      content: '\f099';
+    }
+    &_facebook::before {
+      content: '\f082';
+    }
+    &_instagram::before {
+      content: '\f16d';
+    }
+    &_vk::before {
+      content: '\f189';
+    }
+  }
+}

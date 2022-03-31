@@ -1,0 +1,18 @@
+mixin checkbox({ title="checkbox", description="", isRich=false, checked=false } = {})
+  -
+    const titleClassName = "checkbox__title"
+    const descriptionClassName = "checkbox__description"
+    const titleFontBoldModifier = isRich ? "checkbox__title_font_bold" : ""
+
+  label.checkbox
+    .checkbox__container
+      input&attributes({
+        class: "checkbox__input",
+        type: "checkbox",
+        title: title,
+        checked: checked,
+      })
+      span.checkbox__box
+      span&attributes({ class: [titleClassName, titleFontBoldModifier]}) #{title}
+        if isRich
+          span(class=descriptionClassName) #{description}

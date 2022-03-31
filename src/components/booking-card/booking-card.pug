@@ -1,0 +1,55 @@
+include ../heading/heading.pug
+include ../room-number/room-number.pug
+include ../room-price/room-price.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../price-calc/price-calc.pug
+include ../button/button.pug
+
+mixin booking-card(params = {})
+  -
+    const {
+      title="", 
+      ormMethod="",
+      formAction="",
+      header={},
+      dateDropdown={},
+      dropdown={},
+      button={}
+    } = params
+
+  .booking-card
+    form(
+      class="booking-card__form"
+      method=`${formMethod}`
+      action=`./${formAction}.html`
+    )
+      .booking-card__header
+        +room-number(header.number)
+        +room-price(header.price)
+      section.booking-card__date-dropdown
+        +date-dropdown(dateDropdown)
+      .booking-card__dropdown
+        +heading({ level: "h3", title: "гости" })
+        +dropdown(dropdown)
+      .booking-card__calculation
+        +price-calc({
+          coast: 9990,
+          days: 4,
+          discount: 2179,
+          additionalServiceCharge: 300,
+          serviceChargeInfo: {
+            main: {
+              href: "error-page",
+              text: "Здесь будет ваша подсказка,\
+              а подробности можно узнать кликнув на иконку"
+            },
+            additional: {
+              href: "error-page",
+              text: "Здесь будет ваша подсказка,\
+              а подробности можно узнать кликнув на иконку"
+            },
+          },
+        })
+      .booking-card__button
+        +button(button.submit)

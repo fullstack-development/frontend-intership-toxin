@@ -1,0 +1,27 @@
+@import '@variables';
+
+.logo {
+  &__link {
+    line-height: 0;
+  }
+
+  &__body {
+    &_colorless {
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    &_color {
+      min-width: 40px;
+    }
+
+    &_color-with-text {
+      min-width: 106px;
+    }
+
+    &_size_big {
+      min-width: 200px;
+      min-height: 80px;
+    }
+  }
+}
