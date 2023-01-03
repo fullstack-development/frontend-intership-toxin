@@ -3,6 +3,10 @@ extends ../../layouts/ui-kit-layout.pug
 block variables
   - const title = "404"
 
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./error-page.scss') rel='stylesheet')
+
 block header
 block content
   .canvas-error

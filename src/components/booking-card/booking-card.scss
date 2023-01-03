@@ -1,5 +1,12 @@
 @import '@variables';
 @import '@mixins';
+@import 'components/heading/heading.scss';
+@import 'components/room-number/room-number.scss';
+@import 'components/room-price/room-price.scss';
+@import 'components/dropdown/dropdown.scss';
+@import 'components/date-dropdown/date-dropdown.scss';
+@import 'components/price-calc/price-calc.scss';
+@import 'components/button/button.scss';
 
 .booking-card {
   @include card;

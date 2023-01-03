@@ -1,4 +1,13 @@
 @import '@variables';
+@import 'styles/styles.scss';
+@import 'components/room-search-card/room-search-card.scss';
+@import 'components/registration-card/registration-card.scss';
+@import 'components/login-card/login-card.scss';
+@import 'components/booking-card/booking-card.scss';
+@import 'components/date-dropdown/date-dropdown.scss';
+@import 'components/room-review-widget/room-review-widget.scss';
+@import 'components/ui-kit-header/ui-kit-header.scss';
+@import 'components/ui-kit-footer/ui-kit-footer.scss';
 
 .cards-page {
   display: flex;

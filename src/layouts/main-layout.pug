@@ -23,6 +23,12 @@ html(lang="ru")
     meta(name="msapplication-TileColor" content="#da532c")
     meta(name="theme-color" content="#ffffff")
 
+    //- append page specificly styles in a Pug page file
+    block styles
+
+    //- append page specificly scripts in a Pug page file
+    block scripts
+
   body
     .page-wrapper
       block header

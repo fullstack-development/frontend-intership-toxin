@@ -1,13 +1,12 @@
-module.exports = function (devMode) {
+const PugPlugin = require('pug-plugin');
+
+module.exports = function () {
   return {
     module: {
       rules: [
         {
           test: /\.pug$/,
-          loader: 'pug-loader',
-          options: {
-            pretty: devMode,
-          },
+          loader: PugPlugin.loader,
         },
       ],
     },

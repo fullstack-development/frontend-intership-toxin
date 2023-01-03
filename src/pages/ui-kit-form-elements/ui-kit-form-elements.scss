@@ -1,5 +1,23 @@
 @import '@variables';
 @import '@mixins';
+@import 'styles/styles.scss';
+@import 'components/bullet-list/bullet-list.scss';
+@import 'components/button/button.scss';
+@import 'components/checkbox-list/checkbox-list.scss';
+@import 'components/comment/comment.scss';
+@import 'components/date-dropdown/date-dropdown.scss';
+@import 'components/dropdown/dropdown.scss';
+@import 'components/heading/heading.scss';
+@import 'components/like/like.scss';
+@import 'components/pagination/pagination.scss';
+@import 'components/radio/radio.scss';
+@import 'components/range-slider/range-slider.scss';
+@import 'components/rating/rating.scss';
+@import 'components/room-dignities/room-dignities.scss';
+@import 'components/text-field/text-field.scss';
+@import 'components/toggle/toggle.scss';
+@import 'components/ui-kit-header/ui-kit-header.scss';
+@import 'components/ui-kit-footer/ui-kit-footer.scss';
 
 .form-elements {
   &__container {

@@ -1,4 +1,11 @@
 @import '@variables';
+@import 'components/footer-mobile/footer-mobile.scss';
+@import 'components/logo/logo.scss';
+@import 'components/links/links.scss';
+@import 'components/heading/heading.scss';
+@import 'components/social/social.scss';
+@import 'components/subscribe/subscribe.scss';
+@import 'components/text-field/text-field.scss';
 
 .footer {
   background-color: #fff;

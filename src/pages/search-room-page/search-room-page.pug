@@ -11,6 +11,14 @@ block variables
     const keywords = "жильё, проживание, Отель, Отели, специальные предложения,\
     пакеты услуг, предложения на выходные со скидками, специальные предложения."
 
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./search-room-page.scss') rel='stylesheet')
+
+append scripts
+  //- using pug-plugin the source script must be loaded in Pug via require()
+  script(src=require('./search-room-page.js') defer='defer')
+
 block content
   main.search-room.js-search-room
     .search-room__container

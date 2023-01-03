@@ -5,6 +5,14 @@ include ../../components/type/type.pug
 block variables
   - const title = "Colors & Type"
 
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./ui-kit-colors-type.scss') rel='stylesheet')
+
+append scripts
+  //- using pug-plugin the source script must be loaded in Pug via require()
+  script(src=require('./ui-kit-colors-type.js') defer='defer')
+
 block content
   main.colors-type-page
     .colors-type-page__container

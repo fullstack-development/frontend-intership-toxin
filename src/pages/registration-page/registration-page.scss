@@ -1,8 +1,12 @@
 @import '@variables';
+@import 'styles/styles.scss';
+@import 'components/registration-card/registration-card.scss';
+@import 'components/header/header.scss';
+@import 'components/footer/footer.scss';
 
 .registration {
   background: 44.2% 51.5% / 106.5%
-    url('../../pages/registration-page/images/registration.jpg') no-repeat;
+    url('pages/registration-page/images/registration.jpg') no-repeat;
 
   @media (max-width: 1280px) {
     background-size: cover;

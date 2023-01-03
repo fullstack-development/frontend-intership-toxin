@@ -1,4 +1,11 @@
 @import '@variables';
+@import 'styles/styles.scss';
+@import 'components/header/header.scss';
+@import 'components/filter/filter.scss';
+@import 'components/footer/footer.scss';
+@import 'components/pagination/pagination.scss';
+@import 'components/room-review-widget/room-review-widget.scss';
+@import 'components/room-selection/room-selection.scss';
 
 .search-room {
   &__container {

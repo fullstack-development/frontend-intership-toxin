@@ -1,4 +1,8 @@
 @import '@variables';
+@import 'components/button/button.scss';
+@import 'components/logo/logo.scss';
+@import 'components/links/links.scss';
+@import 'components/navigation/navigation.scss';
 
 .header {
   z-index: 1;

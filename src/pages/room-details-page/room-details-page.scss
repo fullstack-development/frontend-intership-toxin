@@ -1,5 +1,14 @@
 @import '@variables';
 @import '@mixins';
+@import 'styles/styles.scss';
+@import 'components/bullet-list/bullet-list.scss';
+@import 'components/booking-card/booking-card.scss';
+@import 'components/chart/chart.scss';
+@import 'components/comment/comment.scss';
+@import 'components/header/header.scss';
+@import 'components/footer/footer.scss';
+@import 'components/heading/heading.scss';
+@import 'components/room-dignities/room-dignities.scss';
 
 .room-details {
   &__container {

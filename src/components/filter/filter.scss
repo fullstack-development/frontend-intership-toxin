@@ -1,4 +1,10 @@
 @import '@variables';
+@import 'components/checkbox-list/checkbox-list.scss';
+@import 'components/heading/heading.scss';
+@import 'components/date-dropdown/date-dropdown.scss';
+@import 'components/dropdown/dropdown.scss';
+@import 'components/range-slider/range-slider.scss';
+@import 'components/text-field/text-field.scss';
 
 .filter {
   &__dropdown-guests {

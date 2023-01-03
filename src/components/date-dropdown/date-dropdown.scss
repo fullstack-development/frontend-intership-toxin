@@ -1,5 +1,8 @@
 @import '@variables';
 
+// @import the external css file w/o extention '.css' from a package directly here, in SCSS
+@import 'air-datepicker/dist/css/datepicker';
+
 .date-dropdown {
   &__two-inputs {
     display: flex;

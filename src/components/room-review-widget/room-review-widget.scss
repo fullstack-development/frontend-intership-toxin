@@ -1,4 +1,8 @@
 @import '@variables';
+@import 'components/carousel/carousel.scss';
+@import 'components/rating/rating.scss';
+@import 'components/room-number/room-number.scss';
+@import 'components/room-price/room-price.scss';
 
 .room-review-widget {
   max-width: 270px;

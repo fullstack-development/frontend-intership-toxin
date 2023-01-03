@@ -15,6 +15,14 @@ block variables
     const keywords = "жильё, проживание, Отель, Отели, специальные предложения,\
     пакеты услуг, предложения на выходные со скидками, специальные предложения."
 
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./room-details-page.scss') rel='stylesheet')
+
+append scripts
+  //- using pug-plugin the source script must be loaded in Pug via require()
+  script(src=require('./room-details-page.js') defer='defer')
+
 block content
   .room-details
     .room-details__room-photo
@@ -100,7 +108,7 @@ block content
             })
             .room-details__feedback-item
               +comment({ 
-                imageName: "murad_sarafanov.jpg", 
+                imageName: require('./images/avatars/murad_sarafanov.jpg'),
                 name: "Мурад Сарафанов", 
                 dateOfVisit: "5 дней назад", 
                 commentText: "Великолепный матрас на кровати в основной спальне!\
@@ -111,7 +119,7 @@ block content
               })
             .room-details__feedback-item
               +comment({ 
-                imageName: "patricia_steklyshkova.jpg", 
+                imageName: require('./images/avatars/patricia_steklyshkova.jpg'),
                 name: "Патрисия Стёклышкова", 
                 dateOfVisit: "Неделю назад", 
                 commentText: "Обслуживание на высоте! Всё аккуратно, чисто.\

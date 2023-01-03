@@ -1,8 +1,16 @@
-extends ../../layouts/ui-kit-layout.pug
-include ../../components/menu-widget/menu-widget.pug
+extends layouts/ui-kit-layout.pug
+include components/menu-widget/menu-widget.pug
 
 block variables
   - const title = "Стартовая страница"
+
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./start-page.scss') rel='stylesheet')
+
+append scripts
+  //- using pug-plugin the source script must be loaded in Pug via require()
+  script(src=require('./start-page.js') defer='defer')
 
 block header
 block content

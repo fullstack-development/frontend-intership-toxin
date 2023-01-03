@@ -6,6 +6,14 @@ include ../../components/footer-mobile/footer-mobile.pug
 block variables
   - const title = "Headers & Footers"
 
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./ui-kit-headers-footers.scss') rel='stylesheet')
+
+append scripts
+  //- using pug-plugin the source script must be loaded in Pug via require()
+  script(src=require('./ui-kit-headers-footers.js') defer='defer')  
+
 block header
   +ui-kit-header({ withGrayBackground: true })  
 

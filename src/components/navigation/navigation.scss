@@ -1,5 +1,6 @@
 @import '@variables';
 @import '@mixins';
+@import 'components/links/links.scss';
 
 .navigation {
   &__list {
@@ -25,6 +26,7 @@
         @include font-material-icons;
 
         position: absolute;
+        top: 0;
         right: 20px;
         color: $textColor_50;
         line-height: 20px;
@@ -41,6 +43,7 @@
         @include font-material-icons;
 
         position: absolute;
+        top: 0;
         right: 20px;
         color: $textColor_50;
         line-height: 20px;

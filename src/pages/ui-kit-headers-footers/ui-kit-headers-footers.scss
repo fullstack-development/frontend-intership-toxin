@@ -1,4 +1,9 @@
 @import '@variables';
+@import 'styles/styles.scss';
+@import 'components/header/header.scss';
+@import 'components/footer/footer.scss';
+@import 'components/ui-kit-header/ui-kit-header.scss';
+@import 'components/ui-kit-footer/ui-kit-footer.scss';
 
 .headers-footers {
   background: $uiKitPagesBackground;

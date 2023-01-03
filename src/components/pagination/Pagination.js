@@ -1,5 +1,4 @@
 import 'paginationjs/dist/pagination';
-import 'paginationjs/dist/pagination.css';
 
 import getRoundedNumber from './helpers/getRoundedNumber';
 

@@ -1,22 +1,30 @@
-extends ../../layouts/ui-kit-layout.pug
-include ../../components/dropdown/dropdown.pug
-include ../../components/date-dropdown/date-dropdown.pug
-include ../../components/like/like.pug
-include ../../components/checkbox-list/checkbox-list.pug
-include ../../components/radio/radio.pug
-include ../../components/toggle/toggle.pug
-include ../../components/rating/rating.pug
-include ../../components/bullet-list/bullet-list.pug
-include ../../components/range-slider/range-slider.pug
-include ../../components/room-dignities/room-dignities.pug
-include ../../components/comment/comment.pug
-include ../../components/pagination/pagination.pug
-include ../../components/text-field/text-field.pug
-include ../../components/button/button.pug
-include ../../components/heading/heading.pug
+extends layouts/ui-kit-layout.pug
+include components/dropdown/dropdown.pug
+include components/date-dropdown/date-dropdown.pug
+include components/like/like.pug
+include components/checkbox-list/checkbox-list.pug
+include components/radio/radio.pug
+include components/toggle/toggle.pug
+include components/rating/rating.pug
+include components/bullet-list/bullet-list.pug
+include components/range-slider/range-slider.pug
+include components/room-dignities/room-dignities.pug
+include components/comment/comment.pug
+include components/pagination/pagination.pug
+include components/text-field/text-field.pug
+include components/button/button.pug
+include components/heading/heading.pug
 
 block variables
   - const title = "Form & Elements"
+
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./ui-kit-form-elements.scss') rel='stylesheet')
+
+append scripts
+  //- using pug-plugin the source script must be loaded in Pug via require()
+  script(src=require('./ui-kit-form-elements.js') defer='defer')
 
 block content
   main.form-elements
@@ -398,8 +406,9 @@ block content
           })
             
         .form-elements__room-review-wrapper
-          +comment({ 
-            imageName: "murad_sarafanov.jpg", 
+          //- Note: pass into mixin already resolved path of imageName via require()
+          +comment({
+            imageName: require('../room-details-page/images/avatars/murad_sarafanov.jpg'), 
             name: "Мурад Сарафанов", 
             dateOfVisit: "5 дней назад", 
             commentText: "Великолепный матрас на кровати в основной спальне!\

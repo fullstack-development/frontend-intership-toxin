@@ -1,5 +1,8 @@
 @import '@variables';
 @import '@mixins';
+@import 'components/heading/heading.scss';
+@import 'components/pagination/pagination.scss';
+@import 'components/room-review-widget/room-review-widget.scss';
 
 .room-selection {
   min-height: 100%;

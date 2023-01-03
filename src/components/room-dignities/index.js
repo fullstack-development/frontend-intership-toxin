@@ -1,1 +1,0 @@
-import './room-dignities.scss';

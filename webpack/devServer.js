@@ -4,7 +4,13 @@ module.exports = function () {
       static: './dist',
       port: 8081,
       open: '/start-page.html',
-      hot: false,
+      // enable live reload for files defined in paths
+      watchFiles: {
+        paths: ['src/**/*.*'],
+        options: {
+          usePolling: true,
+        },
+      },
     },
   };
 };

@@ -1,6 +1,11 @@
 @import '@variables';
 @import '@mixins';
 
+@import 'components/heading/heading.scss';
+@import 'components/date-dropdown/date-dropdown.scss';
+@import 'components/dropdown/dropdown.scss';
+@import 'components/button/button.scss';
+
 .room-search-card {
   @include card;
 

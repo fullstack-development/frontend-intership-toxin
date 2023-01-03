@@ -1,5 +1,8 @@
 @import '@variables';
 @import '@mixins';
+@import 'components/heading/heading.scss';
+@import 'components/text-field/text-field.scss';
+@import 'components/button/button.scss';
 
 .login-card {
   @include card;

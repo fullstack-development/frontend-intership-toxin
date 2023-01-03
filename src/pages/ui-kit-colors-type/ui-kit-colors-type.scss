@@ -1,5 +1,8 @@
-@import '@variables';
-@import '@mixins';
+@import 'styles/styles.scss';
+@import 'components/colors/colors.scss';
+@import 'components/type/type.scss';
+@import 'components/ui-kit-header/ui-kit-header.scss';
+@import 'components/ui-kit-footer/ui-kit-footer.scss';
 
 .colors-type-page {
   &__container {

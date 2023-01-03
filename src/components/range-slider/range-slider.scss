@@ -1,6 +1,9 @@
 @import '@variables';
 @import '@mixins';
 
+// @import the external css file w/o extention '.css' from a package directly here, in SCSS
+@import 'jquery-ui-slider/jquery-ui';
+
 .range-slider {
   &:focus {
     border: none;

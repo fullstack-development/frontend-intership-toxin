@@ -1,5 +1,6 @@
 @import '@variables';
 @import '@mixins';
+@import 'components/info-icon/info-icon.scss';
 
 .price-calc {
   @include font-body;

@@ -9,6 +9,14 @@ include ../../components/date-dropdown/date-dropdown.pug
 block variables
   - const title = "Cards"
 
+append styles
+  //- using pug-plugin the source style must be loaded in Pug via require()
+  link(href=require('./ui-kit-cards.scss') rel='stylesheet')
+
+append scripts
+  //- using pug-plugin the source script must be loaded in Pug via require()
+  script(src=require('./ui-kit-cards.js') defer='defer')
+
 block header
   +ui-kit-header({ withGrayBackground: true })  
 

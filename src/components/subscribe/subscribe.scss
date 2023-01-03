@@ -1,5 +1,7 @@
 @import '@variables';
 @import '@mixins';
+@import 'components/heading/heading.scss';
+@import 'components/text-field/text-field.scss';
 
 .subscribe {
   width: 100%;

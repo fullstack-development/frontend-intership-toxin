@@ -1,5 +1,4 @@
 import Inputmask from 'inputmask';
-import './text-field.scss';
 
 const maskedTextFieldNodes = document.querySelectorAll('.js-text-field__input_with-mask');
 

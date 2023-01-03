@@ -1,5 +1,10 @@
 @import '@variables';
 @import '@mixins';
+@import 'components/heading/heading.scss';
+@import 'components/text-field/text-field.scss';
+@import 'components/radio/radio.scss';
+@import 'components/button/button.scss';
+@import 'components/toggle/toggle.scss';
 
 .registration-card {
   @include card;

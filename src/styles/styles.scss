@@ -1,0 +1,5 @@
+// bundle global styles in one SCSS file
+@import './reset.scss';
+@import './main.scss';
+@import '../layouts/layout.scss';
+@import '../fonts/fonts.scss';
