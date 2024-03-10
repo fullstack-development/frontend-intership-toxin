@@ -5,6 +5,12 @@ module.exports = function () {
       port: 8081,
       open: '/start-page.html',
       hot: false,
+      watchFiles: {
+        paths: ['src/**/*.*'],
+        options: {
+          usePolling: true,
+        },
+      },
     },
   };
 };
