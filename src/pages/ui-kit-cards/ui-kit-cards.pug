@@ -9,6 +9,9 @@ include ../../components/date-dropdown/date-dropdown.pug
 block variables
   - const title = "Cards"
 
+block script
+  script(src="./index.js" defer)
+
 block header
   +ui-kit-header({ withGrayBackground: true })  
 

@@ -6,6 +6,9 @@ include ../../components/footer-mobile/footer-mobile.pug
 block variables
   - const title = "Headers & Footers"
 
+block script
+  script(src="./index.js" defer)
+
 block header
   +ui-kit-header({ withGrayBackground: true })  
 
